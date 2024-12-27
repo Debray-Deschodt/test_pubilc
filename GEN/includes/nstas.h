@@ -1,0 +1,83 @@
+#ifndef _NSTAS_H
+#define _NSTAS_H
+#ifdef __cplusplus
+extern "C" {
+#endif
+/*                                                                        */
+/* Library NSTAS                                                          */
+/*                                                                        */
+/* Constants (if any)                                                     */
+#define ciD_TAS_DBOX_GETFILENAME_OPEN 1
+#define cE_TAS_DBOX_CANCEL 20010
+#define ciBIF_NEWDIALOGSTYLE 64
+#define ciOFN_NONETWORKBUTTON 131072
+#define cE_TAS_APPERR 20001
+#define ciBIF_BROWSEFORPRINTER 8192
+#define ciOFN_ENABLESIZING 8388608
+#define ciD_TAS_DBOX_GETFILENAME_SV_OPEN 5
+#define ciBIF_EDITBOX 16
+#define ciOFN_READONLY 1
+#define ciBIF_RETURNFSANCESTORS 8
+#define ciOFN_EXTENSIONDIFFERENT 1024
+#define ciBIF_USENEWUI 80
+#define ciOFN_FILEMUSTEXIST 4096
+#define ciOFN_ALLOWMULTISELECT 512
+#define ciOFN_DONTADDTORECENT 33554432
+#define ciBIF_STATUSTEXT 4
+#define ciOFN_NOLONGNAMES 262144
+#define ciOFN_PATHMUSTEXIST 2048
+#define ciOFN_SHAREAWARE 16384
+#define cE_TAS_OUTRES 20002
+#define ciD_TAS_DBOX_GETFILENAME_SV_SAVE 6
+#define ciOFN_LONGNAMES 2097152
+#define ciOFN_FORCESHOWHIDDEN 268435456
+#define ciBIF_DONTGOBELOWDOMAIN 2
+#define ciOFN_NOTESTFILECREATE 65536
+#define ciD_TAS_DBOX_GETFILENAME_SAVE 2
+#define ciOFN_NODEREFERENCELINKS 1048576
+#define ciBIF_BROWSEINCLUDEFILES 16384
+#define ciBIF_NOTRANSLATETARGETS 1024
+#define ciBIF_VALIDATE 32
+#define ciOFN_NOREADONLYRETURN 32768
+#define ciBIF_UAHINT 256
+#define ciBIF_SHAREABLE 32768
+#define ciBIF_NONEWFOLDERBUTTON 512
+#define ciBIF_BROWSEINCLUDEURLS 128
+#define ciOFN_EX_NOPLACESBAR (-2147483647-1)
+#define cE_TAS_IMPLEM 20003
+#define ciOFN_OVERWRITEPROMPT 2
+#define ciOFN_NOVALIDATE 256
+#define ciBIF_BROWSEFORCOMPUTER 4096
+#define ciOFN_EXPLORER 524288
+#define ciOFN_NOCHANGEDIR 8
+#define ciOFN_HIDEREADONLY 4
+#define ciBIF_RETURNONLYFSDIRS 1
+#define ciD_TAS_DBOX_GETFILENAME_SERVER 4
+#define ciOFN_CREATEPROMPT 8192
+#define ciBIF_BROWSEFILEJUNCTIONS 65536
+
+NS_FN(NS_LONG) tas_mail_simplesend(NS_PTR HANDLE,NS_PCHAR _SUBJECT,NS_PCHAR _TORECIP,NS_PCHAR _CCRECIP,
+  NS_PCHAR _BCCRECIP,NS_PCHAR _NOTE,NS_PCHAR _FILENAME);
+NS_FN(NS_LONG) tas_dbox_getfilenamenochdir(NS_PTR HANDLE,NS_LONG ACTION,NS_PCHAR _TITLE,NS_PCHAR _PATH,NS_PCHAR _FILTER,
+  NS_PCHAR FILENAME);
+NS_FN(NS_LONG) tas_dbox_getfilename(NS_PTR HANDLE,NS_LONG ACTION,NS_PCHAR _TITLE,NS_PCHAR _PATH,NS_PCHAR _FILTER,
+  NS_PCHAR FILENAME);
+NS_FN(NS_LONG) tas_dbox_getfilenameEx(NS_PTR HANDLE,NS_LONG ACTION,NS_PCHAR _TITLE,NS_PCHAR _PATH,NS_PCHAR _FILTER,
+  NS_PCHAR FILENAME,NS_PCHAR _DEFAULTEXTENSION);
+NS_FN(NS_LONG) tas_dbox_getfilenameEx2(NS_PTR HANDLE,NS_LONG ACTION,NS_PCHAR _TITLE,NS_PCHAR _PATH,NS_PCHAR _FILTER,
+  NS_LONG FLAGS,NS_tpDynStr FILENAME,NS_PCHAR _DEFAULTEXTENSION);
+NS_FN(NS_LONG) tas_dbox_getdirname(NS_PTR HANDLE,NS_PCHAR _TITLE,NS_PCHAR _PATH,NS_PCHAR DIRNAME);
+NS_FN(NS_LONG) tas_dbox_getdirnameex(NS_PTR HANDLE,NS_PCHAR _TITLE,NS_PCHAR _PATH,NS_PCHAR DIRNAME,NS_LONG FLAGS);
+NS_FN(NS_LONG) tas_dbox_choosefont(NS_PTR HANDLE,NS_PCHAR NAME,NS_INT  *SIZE,NS_SHORTINT  *SELS,NS_INT  *COLOR);
+NS_FN(void) tas_downloadfile(NS_PCHAR _NAME,NS_SHORTINT iDELFILE);
+NS_FN(NS_PCHAR) tas_dbox_getserverbasedir(NS_PCHAR sz__RETURN);
+NS_FN(void) tas_dbox_setserverbasedir(NS_PCHAR _szBASEDIR);
+NS_FN(NS_PCHAR) web_get_url_param_first_value(NS_PCHAR sz__RETURN,NS_PCHAR _szKEY);
+NS_FN(NS_PCHAR) web_get_url_param_nth_value(NS_PCHAR sz__RETURN,NS_PCHAR _szKEY,NS_LONG iINDEX);
+NS_FN(NS_LONG) web_get_url_param_values_count(NS_PCHAR _szKEY);
+NS_FN(NS_PCHAR) web_get_url_next_param_name(NS_PCHAR sz__RETURN,NS_PTR  *HANDLE);
+NS_FN(void) web_url_dispose_param_name_enum(NS_PTR  *HANDLE);
+#ifdef __cplusplus
+}
+#endif
+#endif

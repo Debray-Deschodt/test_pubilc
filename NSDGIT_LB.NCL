@@ -7,21 +7,27 @@
 
 const C_LOG_NSDGIT$		'fr.natsystem.nsdgit'
 
+
 ;*****************************;
 ;**			ERREUR				;
 ;*****************************;
 
 const C_ERROR_NO_CTX%		 -1
+const C_ERR_NO_INI_CTX%		 -2
+const C_ERR_WRONG_FORMAT%	 -3
+
 
 ;*****************************;
 ;**			SEGMENT        	;
 ;*****************************;
 
 SEGMENT SEG_NSDGIT_CTX
-	 SEG_NSDGIT_WND wnd
-	 SEG_NSDGIT_USER user
-	 err%
-	 err$
+	 SEG_NSDGIT_WND		wnd
+	 SEG_NSDGIT_USER		user
+	 SEG_NSDGIT_FILE		file
+	 SEG_NSDGIT_INI		ini
+								err%
+								err$
 ENDSEGMENT ; SEG_NSDGIT_CTX
 
 SEGMENT SEG_NSDGIT_WND
@@ -36,17 +42,10 @@ SEGMENT SEG_NSDGIT_USER
 	 token$
 ENDSEGMENT ; SEG_NSDGIT_USER
 
+SEGMENT SEG_NSDGIT_FILE
+	 racine$
+ENDSEGMENT ; SEG_NSDGIT_FILE
 
-
-;|;*****************************;
-;|;**			Router          	;
-;|;*****************************;
-
-;|;** permet de gerer le routing de l'application.
-;|instruction NSDGIT_ROUTER pointer p_router_wnd
-;|	 hide p_router_wnd
-;|	 call w_install_git
-;|	 call w_remote
-;|	 call mdi
-;|	 show p_router_wnd
-;|endinstruction ; NDSGIT_ROUTER
+SEGMENT SEG_NSDGIT_INI
+	 h_connexion%
+ENDSEGMENT ; SEG_NSDGIT_INI

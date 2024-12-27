@@ -93,11 +93,18 @@
 	<Targets Count="1" Generic="1" Current="1">
 		<Target><Name>Generic Target</Name></Target>
 	</Targets>
-	<Resources Count="8">
+	<Resources Count="15">
 		<Resource><Kind>SCR</Kind><Name>MDI</Name><Trg>65535</Trg></Resource>
 		<Resource><Kind>NCL</Kind><Name>NCLLOGR</Name><Trg>65535</Trg></Resource>
+		<Resource><Kind>NCL</Kind><Name>NSDATE</Name><Trg>65535</Trg></Resource>
 		<Resource><Kind>NCL</Kind><Name>NSDGIT_LB</Name><Trg>65535</Trg></Resource>
+		<Resource><Kind>NCL</Kind><Name>NSDYNSTR</Name><Trg>65535</Trg></Resource>
+		<Resource><Kind>NCL</Kind><Name>NSHTTP</Name><Trg>65535</Trg></Resource>
+		<Resource><Kind>NCL</Kind><Name>NSINIM</Name><Trg>65535</Trg></Resource>
+		<Resource><Kind>NCL</Kind><Name>NSJSON</Name><Trg>65535</Trg></Resource>
+		<Resource><Kind>NCL</Kind><Name>NSMISC</Name><Trg>65535</Trg></Resource>
 		<Resource><Kind>BMP</Kind><Name>NSSEARCH.BMP</Name><Trg>65535</Trg></Resource>
+		<Resource><Kind>NCL</Kind><Name>NSTAS</Name><Trg>65535</Trg></Resource>
 		<Resource><Kind>TPL</Kind><Name>PICTBUT</Name><Trg>65535</Trg></Resource>
 		<Resource><Kind>SCR</Kind><Name>W_CNX</Name><Trg>65535</Trg></Resource>
 		<Resource><Kind>SCR</Kind><Name>W_PATH_GIT</Name><Trg>65535</Trg></Resource>
@@ -120,16 +127,16 @@
 			<LPathImpLib>LIB.EXE</LPathImpLib>
 			<LOptBin>/SUBSYSTEM:WINDOWS</LOptBin>
 			<LOptDll>/SUBSYSTEM:WINDOWS /DLL</LOptDll>
-			<LLibBin>NSLIB.LIB</LLibBin>
+			<LLibBin>NSLIB.LIB+NSCUST.LIB+NSTAS.LIB+nsw2inim.lib</LLibBin>
 			<LLibDll>NSLIB.LIB</LLibDll>
 			<LStackSize>32768</LStackSize>
 			<LHeapSize>1024</LHeapSize>
 			<SourcesPath>(PROJDIR)\GEN</SourcesPath>
-			<IncludesPath>(PROJDIR)\GEN</IncludesPath>
-			<ObjectsPath>(PROJDIR)\GEN</ObjectsPath>
+			<IncludesPath>(PROJDIR)\GEN\includes</IncludesPath>
+			<ObjectsPath>(PROJDIR)\GEN\objects</ObjectsPath>
 			<BinariesPath>(PROJDIR)\GEN</BinariesPath>
-			<DLLsPath>(PROJDIR)\GEN</DLLsPath>
-			<LibsPath>(PROJDIR)\GEN</LibsPath>
+			<DLLsPath>(PROJDIR)\GEN\dll</DLLsPath>
+			<LibsPath>(PROJDIR)\GEN\libraries</LibsPath>
 			<NbSources>0</NbSources>
 
 			<Defaults i='0'>0</Defaults>
@@ -154,7 +161,7 @@
 			<ImpLibOptions>/MACHINE:IX86</ImpLibOptions>
 			<ConfigResources Count="0">
 			</ConfigResources>
-			<StandaloneExeName></StandaloneExeName>
+			<StandaloneExeName>NSDGit</StandaloneExeName>
 		</Config>
 	</GenSetup>
 </Project>
