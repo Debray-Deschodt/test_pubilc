@@ -1,4 +1,4 @@
-FILE# 3
+FILE# 4
 DEVICE 1920 1080 6 16 8 8 8 8 1 1 23 20 32 32
 DIALOG W_CNX 'NSDGIT  -  connection'320 256 454 195 PSHELLP TITLEBAR DLGBORDER SIZEREDRAW NOBYTEALIGN DEFICON ''NULL PB_OK PB_CANCEL EF_USERNAME NULL NOBACKGROUND 0 
   CHECKBOX CHK_REMEMBER NULL NULL NULL 'Remember me' 45 47 89 0 0 AUTOSIZE BELOW FONT 'Segoe UI' 8
@@ -41,6 +41,13 @@ ctx.err% = 0
 ctx.err$ = ''
 
 ;**TODO recuperer le nom d'utilisateur et le token pour valoriser les champs.
+
+
+;**************************************
+;************TEST GIT************
+;**************************************
+ctx.err$ = 'test GIT'
+
 
 NslogInfo C_log_nsdgit$, #location && 'end'
 ~~
