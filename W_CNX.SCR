@@ -1,0 +1,48 @@
+FILE# 3
+DEVICE 1920 1080 6 16 8 8 8 8 1 1 23 20 32 32
+DIALOG W_CNX 'NSDGIT  -  connection'320 256 454 195 PSHELLP TITLEBAR DLGBORDER SIZEREDRAW NOBYTEALIGN DEFICON ''NULL PB_OK PB_CANCEL EF_USERNAME NULL NOBACKGROUND 0 
+  CHECKBOX CHK_REMEMBER NULL NULL NULL 'Remember me' 45 47 89 0 0 AUTOSIZE BELOW FONT 'Segoe UI' 8
+  ENTRY EF_TOKEN NULL NULL NULL 117 75 276 31 0 0 MARGIN AUTOSCROLL '' '' NONE LEFT BELOW FONT 'Segoe UI' 8
+  ENTRY EF_USERNAME NULL NULL NULL 117 104 276 31 0 0 MARGIN AUTOSCROLL '' '' NONE LEFT BELOW FONT 'Segoe UI' 8
+  PUSHBUTTON PB_CANCEL NULL 'Quit' 322 15 0 0 0 FONT 'Segoe UI' 8
+  EVENT PB_CANCEL EXECUTED
+close
+~~
+  END
+  PUSHBUTTON PB_OK NULL 'Connection' 234 15 81 0 0 FONT 'Segoe UI' 8
+  EVENT PB_OK EXECUTED
+;** TODO CK_REMEMBER, enregistrer le token et le nom d'utilisateur ?
+;** TODO récupération du user.
+
+hide self%
+call W_INSTALL_GIT using getdata%
+~~
+  END
+  TEXT ST_TOKEN NULL 'Token :' 45 78 39 13 0 0 ERASERECT AUTOSIZE LEFT FONT 'Segoe UI' 8
+  TEXT ST_USERNAME NULL 'Username : ' 45 109 61 13 0 0 ERASERECT AUTOSIZE LEFT FONT 'Segoe UI' 8
+  EVENT NULL INIT
+local SEG_NSDGIT_CTX@ ctx
+
+NslogInfo C_log_nsdgit$, #location && 'begin'
+
+new @ctx
+setdata @ctx
+
+;** On initialise tous les champs du segement.
+ctx.wnd.p_install_git = 0
+ctx.wnd.p_mdi = 0
+ctx.wnd.p_cnx = self%
+ctx.wnd.p_remote = 0
+
+ctx.user.token$ = ''
+ctx.user.username$ = ''
+
+ctx.err% = 0
+ctx.err$ = ''
+
+;**TODO recuperer le nom d'utilisateur et le token pour valoriser les champs.
+
+NslogInfo C_log_nsdgit$, #location && 'end'
+~~
+  END
+END

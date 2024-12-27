@@ -1,0 +1,52 @@
+FILE# 3
+DEVICE 1920 1080 6 16 8 8 8 8 1 1 23 20 32 32
+DIALOG W_PATH_GIT 'NSDGIT  -  git'320 256 494 158 PSHELLP TITLEBAR DLGBORDER SIZEREDRAW NOBYTEALIGN DEFICON ''NULL PB_OK PB_CANCEL EF_PATH NULL NOBACKGROUND 0 
+  ENTRY EF_PATH NULL NULL NULL 83 71 303 31 0 0 MARGIN AUTOSCROLL '' '' NONE LEFT BELOW FONT 'Segoe UI' 8
+  PUSHBUTTON PB_CANCEL NULL 'Quit' 122 15 0 0 0 FONT 'Segoe UI' 8
+  EVENT PB_CANCEL EXECUTED
+local SEG_NSDGIT_CTX@ ctx
+
+@ctx = SEG_NSDGIT_CTX(getdata%)
+
+show ctx.wnd.p_cnx
+SetFocus ctx.wnd.p_cnx
+close
+~~
+  END
+  PUSHBUTTON PB_INSTALL NULL 'Install Git' 370 15 0 0 0 FONT 'Segoe UI' 8
+  EVENT PB_INSTALL EXECUTED
+NslogInfo C_log_nsdgit$, 'install git'
+;** TODO fenetre de choix de version.
+;** TODO install git.
+~~
+  END
+  PUSHBUTTON PB_OK NULL 'Ok' 41 15 0 0 0 FONT 'Segoe UI' 8
+  EVENT PB_OK EXECUTED
+local SEG_NSDGIT_CTX@ ctx
+
+NslogInfo C_log_nsdgit$, #location && 'begin'
+
+@ctx = SEG_NSDGIT_CTX(getdata%)
+call W_REMOTE
+
+NslogInfo C_log_nsdgit$, #location && 'end'
+~~
+  END
+  CONTROL PB_SEARCH PICTBUT NULL 396 66 46 33 ''''' @-1 0 0 0 0 0 0 NULL CCAFBMPS FONT ''Segoe UI'' 8 0 1 0 0 0' FILES PRELOAD 2 '(*BMP)NSSEARCH' '(*BMP)NSSEARCH'
+  EVENT PB_SEARCH EXECUTED
+;** TODO ouvrir une fenêtre de choix de path.
+~~
+  END
+  TEXT ST_PATH NULL 'Path :' 41 76 30 13 0 0 ERASERECT AUTOSIZE LEFT FONT 'Segoe UI' 8
+  EVENT NULL INIT
+local SEG_NSDGIT_CTX@ ctx
+
+NslogInfo C_log_nsdgit$, #location && 'begin'
+
+@ctx = SEG_NSDGIT_CTX(param12%)
+setdata @ctx
+
+NslogInfo C_log_nsdgit$, #location && 'end'
+~~
+  END
+END

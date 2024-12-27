@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<Project>
+	<Context>
+		<PrimaryWindow>W_CNX</PrimaryWindow>
+		<StartEXE>
+			<Name></Name>
+			<Parms></Parms>
+			<Mode>0</Mode>
+			<CurDir></CurDir>
+		</StartEXE>
+	</Context>
+	<Options>
+		<AutoSaveDuration>0</AutoSaveDuration>
+		<SaveBeforeRun/>
+		<MinimizeOnRun/>
+		<HorzGrid>8</HorzGrid>
+		<VertGrid>8</VertGrid>
+		<DesignMode/>
+		<DevelopmentMode/>
+		<DisplayBackground/>
+		<IgnoreTab/>
+		<TabSize>4</TabSize>
+		<BackgroundName></BackgroundName>
+		<BackgroundColor>0</BackgroundColor>
+		<DialogBoxTemplate></DialogBoxTemplate>
+		<WindowTemplate></WindowTemplate>
+		<Helpfiles>NSDESIGN</Helpfiles>
+		<PrnLines>66</PrnLines>
+		<PrnColumns>78</PrnColumns>
+		<PrnFont>Courier,10</PrnFont>
+		<PrnTopLines>0</PrnTopLines>
+		<PrnLeftColumns>0</PrnLeftColumns>
+		<PrnDevice></PrnDevice>
+		<PrnFormFeed></PrnFormFeed>
+		<PrnInit></PrnInit>
+		<PrnHeader i='0'></PrnHeader>
+		<PrnHeader i='1'>@CENTERED@TITLE</PrnHeader>
+		<PrnHeader i='2'></PrnHeader>
+		<PrnHeader i='3'>@LEFT@DATE @TIME@RIGHTpage @PAGE</PrnHeader>
+		<Locks>0</Locks>
+		<NewCtrlDefFont>FONT 'Segoe UI' 8</NewCtrlDefFont>
+	</Options>
+	<Directories>
+		<Executables>(NSBINDIR)</Executables>
+		<Temporaries>(NS-TMP)</Temporaries>
+		<Backup>(PROJDIR)</Backup>
+		<Screens>
+			<D>(PROJDIR)</D>
+			<DS></DS>
+		</Screens>
+		<Templates>
+			<D>(PROJDIR)</D>
+			<DS>(NSBINDIR)..\TPL</DS>
+		</Templates>
+		<Segments>
+			<D>(PROJDIR)</D>
+			<DS></DS>
+		</Segments>
+		<Bitmaps>
+			<D>(PROJDIR)</D>
+			<DS>(NSBINDIR)..\BMP</DS>
+		</Bitmaps>
+		<Lists>
+			<D>(PROJDIR)</D>
+			<DS></DS>
+		</Lists>
+		<Includes>
+			<D>(PROJDIR)</D>
+			<DS>(NSBINDIR)..\NCL</DS>
+		</Includes>
+		<Libraries>
+			<D>(PROJDIR)</D>
+			<DS>(NSBINDIR)..\NCL</DS>
+		</Libraries>
+		<Variables>
+			<D>(PROJDIR)</D>
+			<DS></DS>
+		</Variables>
+		<Root>(+NS-LOC)</Root>
+	</Directories>
+	<Events>
+		<X>0</X>
+		<Y>0</Y>
+		<W>0</W>
+		<H>0</H>
+		<FontName></FontName>
+		<FontSize>10</FontSize>
+		<FontSels>0</FontSels>
+		<SearchPattern></SearchPattern>
+		<FgCol>0</FgCol>
+		<BkCol>0</BkCol>
+	</Events>
+	<Targets Count="1" Generic="1" Current="1">
+		<Target><Name>Generic Target</Name></Target>
+	</Targets>
+	<Resources Count="8">
+		<Resource><Kind>SCR</Kind><Name>MDI</Name><Trg>65535</Trg></Resource>
+		<Resource><Kind>NCL</Kind><Name>NCLLOGR</Name><Trg>65535</Trg></Resource>
+		<Resource><Kind>NCL</Kind><Name>NSDGIT_LB</Name><Trg>65535</Trg></Resource>
+		<Resource><Kind>BMP</Kind><Name>NSSEARCH.BMP</Name><Trg>65535</Trg></Resource>
+		<Resource><Kind>TPL</Kind><Name>PICTBUT</Name><Trg>65535</Trg></Resource>
+		<Resource><Kind>SCR</Kind><Name>W_CNX</Name><Trg>65535</Trg></Resource>
+		<Resource><Kind>SCR</Kind><Name>W_PATH_GIT</Name><Trg>65535</Trg></Resource>
+		<Resource><Kind>SCR</Kind><Name>W_REMOTE</Name><Trg>65535</Trg></Resource>
+	</Resources>
+	<GenSetup Count="1">
+		<Config>
+			<ConfigName>win32</ConfigName>
+			<MainScreen>W_CNX</MainScreen>
+			<HelpInfo/>
+			<SymbolsInfo/>
+			<MaxLineSize>120</MaxLineSize>
+			<MaxLinesPerFile>0</MaxLinesPerFile>
+			<MaxIdLength>63</MaxIdLength>
+			<TabSize>4</TabSize>
+			<ExeName></ExeName>
+			<CPath>CL.EXE</CPath>
+			<COptions>/c /W3 /Gs /Zp /DWIN32 /MD</COptions>
+			<LPath>LINK.EXE</LPath>
+			<LPathImpLib>LIB.EXE</LPathImpLib>
+			<LOptBin>/SUBSYSTEM:WINDOWS</LOptBin>
+			<LOptDll>/SUBSYSTEM:WINDOWS /DLL</LOptDll>
+			<LLibBin>NSLIB.LIB</LLibBin>
+			<LLibDll>NSLIB.LIB</LLibDll>
+			<LStackSize>32768</LStackSize>
+			<LHeapSize>1024</LHeapSize>
+			<SourcesPath>(PROJDIR)\GEN</SourcesPath>
+			<IncludesPath>(PROJDIR)\GEN</IncludesPath>
+			<ObjectsPath>(PROJDIR)\GEN</ObjectsPath>
+			<BinariesPath>(PROJDIR)\GEN</BinariesPath>
+			<DLLsPath>(PROJDIR)\GEN</DLLsPath>
+			<LibsPath>(PROJDIR)\GEN</LibsPath>
+			<NbSources>0</NbSources>
+
+			<Defaults i='0'>0</Defaults>
+			<Defaults i='1'>0</Defaults>
+			<Defaults i='2'>0</Defaults>
+			<Defaults i='3'>0</Defaults>
+			<Defaults i='4'>0</Defaults>
+			<Defaults i='5'>0</Defaults>
+			<Defaults i='6'>0</Defaults>
+			<Defaults i='7'>0</Defaults>
+			<Defaults i='8'>0</Defaults>
+			<Defaults i='9'>0</Defaults>
+			<Defaults i='10'>0</Defaults>
+			<Defaults i='11'>0</Defaults>
+			<ConfigTargets Default="1" Count="1">
+				<Target>Generic Target</Target>
+			</ConfigTargets>
+			<RCPath></RCPath>
+			<RCOptions></RCOptions>
+			<ToolSetName>MSVC-Win32</ToolSetName>
+			<GenOptions>/TOOLKIND:MSVC32</GenOptions>
+			<ImpLibOptions>/MACHINE:IX86</ImpLibOptions>
+			<ConfigResources Count="0">
+			</ConfigResources>
+			<StandaloneExeName></StandaloneExeName>
+		</Config>
+	</GenSetup>
+</Project>
