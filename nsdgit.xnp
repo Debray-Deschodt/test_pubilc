@@ -93,10 +93,11 @@
 	<Targets Count="1" Generic="1" Current="1">
 		<Target><Name>Generic Target</Name></Target>
 	</Targets>
-	<Resources Count="15">
+	<Resources Count="16">
 		<Resource><Kind>SCR</Kind><Name>MDI</Name><Trg>65535</Trg></Resource>
 		<Resource><Kind>NCL</Kind><Name>NCLLOGR</Name><Trg>65535</Trg></Resource>
 		<Resource><Kind>NCL</Kind><Name>NSDATE</Name><Trg>65535</Trg></Resource>
+		<Resource><Kind>NCL</Kind><Name>NSDGIT_GITHUB_LB</Name><Trg>65535</Trg></Resource>
 		<Resource><Kind>NCL</Kind><Name>NSDGIT_LB</Name><Trg>65535</Trg></Resource>
 		<Resource><Kind>NCL</Kind><Name>NSDYNSTR</Name><Trg>65535</Trg></Resource>
 		<Resource><Kind>NCL</Kind><Name>NSHTTP</Name><Trg>65535</Trg></Resource>
