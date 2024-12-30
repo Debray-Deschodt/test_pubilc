@@ -18,7 +18,7 @@ ENDSEGMENT ; github_res
 ;**************************************
 instruction github_get_user token$, github_res@ res
 	 local pointer p_http
-	 local ret%, line$(1000)
+	 local ret%, DynStr line$
 	 local err%, err$
 
 	 err% = 0
@@ -36,7 +36,7 @@ instruction github_get_user token$, github_res@ res
 		  err% = NS_HTTP_ERROR
 	 endif
 
-	 if err% = 0 
+	 if err% = 0
 		  NS_HTTP_ADDREQUESTPROPERTY p_http, 'Authorization', 'Bearer' && token$
 		  NS_HTTP_ADDREQUESTPROPERTY p_http, 'Accept', 'application/vnd.github+json'
 		  NS_HTTP_ADDREQUESTPROPERTY p_http, 'X-GitHub-Api-Version', '2022-11-28'
@@ -45,12 +45,7 @@ instruction github_get_user token$, github_res@ res
 	 if err% = 0
 		  NS_HTTP_GET p_http
 		  while NS_HTTP_EOF(p_http) = 0
-				ret% = NS_HTTP_GETLINE(p_http,@line$,SIZEOF line$)
-				if ret% = true% 
-					 res.res = res.res && #10#13 && line$
-				else
-					 res.res = res.res && line$
-				endif
+				res.res = res.res && #10#13 && NS_HTTP_GETLINEEX(p_http)
 		  endwhile
 
 		  if NS_HTTP_ERROR <> 0
@@ -70,4 +65,3 @@ instruction github_get_user token$, github_res@ res
 
 	 NS_HTTP_DISPOSE(p_http)
 endinstruction ; github_get_user
-
